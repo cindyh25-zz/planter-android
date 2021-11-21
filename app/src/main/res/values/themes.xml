@@ -11,8 +11,7 @@
         <item name="colorSecondaryVariant">@color/green_dark</item>
         <item name="colorOnSecondary">@color/green_light</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">@color/black</item>
-        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/green_dull</item>
 
         <!-- Customize your theme here. -->
         <item name="android:windowBackground">@color/green_wash</item>

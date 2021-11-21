@@ -6,6 +6,7 @@
     android:elevation="@dimen/grid_1x"
     app:cardCornerRadius="@dimen/grid_3x"
     android:layout_marginBottom="@dimen/grid_2x"
+    android:id="@+id/plantCard"
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout

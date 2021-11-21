@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/cindy/cornell/android/Planter/app/src/main/res/drawable/add_image_background.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/cindy/cornell/android/Planter/app/src/main/res/drawable/button_blue_background.xml" value="0.40572916666666664" />
         <entry key="..\:/Users/cindy/cornell/android/Planter/app/src/main/res/drawable/button_compact_background.xml" value="0.3435185185185185" />
         <entry key="..\:/Users/cindy/cornell/android/Planter/app/src/main/res/drawable/button_green_background.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/cindy/cornell/android/Planter/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.5703125" />
@@ -15,6 +16,7 @@
         <entry key="..\:/Users/cindy/cornell/android/Planter/app/src/main/res/layout/dropdown_item.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/cindy/cornell/android/Planter/app/src/main/res/layout/home_action_bar.xml" value="0.5541666666666667" />
         <entry key="..\:/Users/cindy/cornell/android/Planter/app/src/main/res/layout/plant_card.xml" value="0.26469098277608916" />
+        <entry key="..\:/Users/cindy/cornell/android/Planter/app/src/main/res/layout/single_plant_image.xml" value="0.2391304347826087" />
         <entry key="..\:/Users/cindy/cornell/android/Planter/app/src/main/res/layout/spinner_dropdown.xml" value="0.20520833333333333" />
       </map>
     </option>
