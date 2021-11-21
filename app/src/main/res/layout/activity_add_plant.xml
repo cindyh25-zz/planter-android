@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddPlantActivity">
+
+    <include layout="@layout/add_plant_action_bar" android:id="@+id/addActionBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/addActionBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="@dimen/grid_4x"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/F4"
+            android:text="@string/plant_name_label"
+            android:id="@+id/plantNameEditLabel"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/addPlantName"
+            app:layout_constraintTop_toBottomOf="@id/plantNameEditLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@drawable/input_background"
+            android:hint="@string/plant_name_placeholder"
+            android:padding="@dimen/grid_3x"
+            android:layout_marginTop="@dimen/grid_3x"
+            android:textColorHint="@color/green_dull"
+            style="@style/F3"
+            />
+
+        <TextView
+            android:id="@+id/scheduleEditLabel"
+            style="@style/F4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/grid_6x"
+            android:text="@string/watering_schedule_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addPlantName" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/everyText"
+            style="@style/F3"
+            android:text="@string/every"
+            app:layout_constraintTop_toTopOf="@id/scheduleQuantity"
+            app:layout_constraintBottom_toBottomOf="@id/scheduleQuantity"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <EditText
+            android:layout_width="@dimen/schedule_quantity_input_width"
+            android:layout_height="wrap_content"
+            android:id="@+id/scheduleQuantity"
+            app:layout_constraintTop_toBottomOf="@id/scheduleEditLabel"
+            app:layout_constraintStart_toEndOf="@id/everyText"
+            android:background="@drawable/input_background"
+            android:hint="@string/schedule_number_placeholder"
+            android:padding="@dimen/grid_3x"
+            android:layout_marginBottom="@dimen/grid_6x"
+            android:layout_marginTop="@dimen/grid_3x"
+            android:layout_marginLeft="@dimen/grid_3x"
+            android:textColorHint="@color/green_dull"
+            style="@style/F3"
+            android:inputType="number"
+            />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/scheduleDuration"
+            app:layout_constraintTop_toTopOf="@id/scheduleQuantity"
+            app:layout_constraintBottom_toBottomOf="@id/scheduleQuantity"
+            app:layout_constraintStart_toEndOf="@id/scheduleQuantity"
+            android:layout_marginLeft="@dimen/grid_3x"
+            android:spinnerMode="dropdown"
+            android:background="@drawable/input_background"
+            android:entries="@array/duration_options"
+            android:prompt="@string/schedule_duration_placeholder"
+            android:padding="@dimen/grid_3x"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/F4"
+            android:text="@string/photo_input_label"
+            android:id="@+id/addImageLabel"
+            app:layout_constraintTop_toBottomOf="@id/scheduleQuantity"
+            android:layout_marginTop="@dimen/grid_6x"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/add_image_button_height"
+            android:id="@+id/addImageButton"
+            android:background="@drawable/add_image_background"
+            app:layout_constraintTop_toBottomOf="@id/addImageLabel"
+            android:layout_marginTop="@dimen/grid_3x"
+            android:scaleType="centerCrop"
+            android:clipToOutline="true"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/addImageText"
+            android:text="@string/photo_cta"
+            app:layout_constraintTop_toTopOf="@id/addImageButton"
+            app:layout_constraintBottom_toBottomOf="@id/addImageButton"
+            app:layout_constraintStart_toStartOf="@id/addImageButton"
+            app:layout_constraintEnd_toEndOf="@id/addImageButton"
+            style="@style/F4"
+            android:textColor="@color/green_dark"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <android.widget.Button
+        android:id="@+id/addPlantSaveButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/save_cta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/grid_6x"
+        android:padding="@dimen/grid_4x"
+        android:layout_margin="@dimen/grid_6x"
+        android:textColor="@color/white"
+        android:background="@drawable/button_green_background"
+        style="@style/MyButton"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

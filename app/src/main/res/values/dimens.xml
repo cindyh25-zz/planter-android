@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="card_padding">12dp</dimen>
+
+    <dimen name="fill_container">0dp</dimen>
+    <dimen name="grid_1x">4dp</dimen>
+    <dimen name="grid_2x">8dp</dimen>
+    <dimen name="grid_3x">12dp</dimen>
+    <dimen name="grid_4x">16dp</dimen>
+    <dimen name="grid_6x">24dp</dimen>
+
+    <dimen name="button_compact_padding_vertical">8dp</dimen>
+    <dimen name="button_compact_padding_horizontal">10dp</dimen>
+
+    <dimen name="button_large_padding_">16dp</dimen>
+    <dimen name="button_border_radius">100dp</dimen>
+
+    <dimen name="image_small_width">72dp</dimen>
+    <dimen name="schedule_quantity_input_width">60dp</dimen>
+    <dimen name="add_image_button_height">240dp</dimen>
+</resources>

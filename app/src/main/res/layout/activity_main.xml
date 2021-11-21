@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <include layout="@layout/home_action_bar" android:id="@+id/homeActionBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text= "@string/all_plants"
+        android:id="@+id/allPlantsHeader"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/homeActionBar"
+        android:layout_marginBottom="@dimen/grid_3x"
+        android:layout_marginTop="@dimen/grid_6x"
+        android:layout_marginLeft="@dimen/grid_4x"
+        style="@style/TitleBold"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/allPlantsList"
+        app:layout_constraintTop_toBottomOf="@id/allPlantsHeader"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingHorizontal="@dimen/grid_4x"
+        android:paddingVertical="@dimen/grid_1x"
+        android:clipToPadding="false"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

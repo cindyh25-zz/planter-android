@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:elevation="@dimen/grid_1x"
+    app:cardCornerRadius="@dimen/grid_3x"
+    android:layout_marginBottom="@dimen/grid_2x"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/grid_3x">
+
+        <ImageView
+            android:layout_width="@dimen/image_small_width"
+            android:layout_height="@dimen/image_small_width"
+            android:id="@+id/plantCardImage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:layout_width="@dimen/fill_container"
+            android:layout_height="wrap_content"
+            android:id="@+id/plantCardName"
+            style="@style/F3"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/plantCardImage"
+            android:layout_marginLeft="@dimen/grid_3x"
+            />
+
+        <TextView
+            android:layout_width="@dimen/fill_container"
+            android:layout_height="wrap_content"
+            android:id="@+id/plantCardLastWatered"
+            style="@style/Body"
+            android:textColor="@color/gray"
+            app:layout_constraintTop_toBottomOf="@id/plantCardName"
+            app:layout_constraintStart_toStartOf="@id/plantCardName"
+            android:layout_marginTop="@dimen/grid_1x"
+            android:text="@string/last_watered"
+            />
+
+        <TextView
+            android:layout_width="@dimen/fill_container"
+            android:layout_height="wrap_content"
+            android:id="@+id/plantCardSchedule"
+            style="@style/Body"
+            android:textColor="@color/gray"
+            app:layout_constraintTop_toBottomOf="@id/plantCardLastWatered"
+            app:layout_constraintStart_toStartOf="@id/plantCardName"
+            android:layout_marginTop="@dimen/grid_1x"
+            android:text="@string/every"
+            />
+
+        <android.widget.Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/water_cta"
+            android:backgroundTint="@color/blue_light"
+            android:background="@drawable/button_compact_background"
+            android:paddingVertical="@dimen/button_compact_padding_vertical"
+            android:paddingHorizontal="@dimen/button_compact_padding_horizontal"
+            style="@style/MyButtonStyleSmall"
+            android:textColor="@color/blue_regular"
+            android:id="@+id/plantCardButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

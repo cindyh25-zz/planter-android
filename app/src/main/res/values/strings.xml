@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Planter</string>
+    <string name="home_title">Your plants</string>
+
+    <string name="all_plants">All plants</string>
+    <string name="water_plant_cta">Water this plant</string>
+    <string name="water_cta">Water</string>
+    <string name="last_watered">Last watered</string>
+    <string name="schedule">Schedule</string>
+    <string name="past_waterings">Past waterings</string>
+    <string name="add_plant">Add a new plant</string>
+
+    <string name="plant_name_label">What do you call this plant?</string>
+    <string name="watering_schedule_label">How often do you need to water it?</string>
+    <string name="every">Every</string>
+    <string name="photo_input_label">What does it look like?</string>
+    <string name="photo_cta">Add a photo</string>
+    <string name="save_cta">Save</string>
+
+    <string name="healthy">Healthy</string>
+    <string name="underwatered">Under watered</string>
+    <string name="overwatered">Over watered</string>
+    <string name="unhealthy">Unhealthy</string>
+
+    <string name="plant_name_placeholder">Dragon tree, Fred, Epipremnum aureum</string>
+    <string name="schedule_number_placeholder">2</string>
+    <string name="schedule_duration_placeholder">weeks</string>
+
+    <string-array name="duration_options">
+        <item>Hours</item>
+        <item>Days</item>
+        <item>Weeks</item>
+        <item>Months</item>
+    </string-array>
+</resources>
