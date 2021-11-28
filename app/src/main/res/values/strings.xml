@@ -1,6 +1,16 @@
 <resources>
-    <string name="app_name">Planter</string>
+    <string name="app_name">Leafy</string>
     <string name="home_title">Your plants</string>
+
+    <string name="welcome">Welcome!</string>
+    <string name="welcome_back">Welcome back!</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="sign_up_cta">Sign up</string>
+    <string name="log_in_cta">Log in</string>
+    <string name="sign_up_label">Don\'t have an account yet?</string>
+    <string name="log_in_label">Already have an account?</string>
+
 
     <string name="all_plants">All plants</string>
     <string name="water_plant_cta">Water this plant</string>

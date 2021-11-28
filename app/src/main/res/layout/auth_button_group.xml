@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingHorizontal="@dimen/grid_9x">
+
+    <android.widget.Button
+        android:id="@+id/authSaveButton"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/sign_up_cta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/grid_4x"
+        android:textColor="@color/white"
+        android:background="@drawable/button_green_background"
+        style="@style/MyButton"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/changeAuthText"
+        android:text="@string/log_in_label"
+        style="@style/F4"
+        app:layout_constraintTop_toBottomOf="@id/authSaveButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/grid_6x"
+        />
+
+    <android.widget.Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/log_in_cta"
+        android:backgroundTint="@android:color/transparent"
+        android:paddingVertical="@dimen/button_compact_padding_vertical"
+        android:paddingHorizontal="@dimen/button_compact_padding_horizontal"
+        style="@style/MyButtonStyleSmall"
+        android:textColor="@color/green_dark"
+        android:id="@+id/authSecondaryButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/changeAuthText"
+        android:layout_marginTop="@dimen/grid_1x"
+        android:elevation="0dp"
+        />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

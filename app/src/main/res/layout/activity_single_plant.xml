@@ -6,4 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".SinglePlantActivity">
 
+    <include layout="@layout/single_plant_image"
+        android:id="@+id/plantImageSection"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <android.widget.Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/MyButton"
+        android:background="@drawable/button_blue_background"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="@dimen/grid_6x"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/water_plant_cta"
+        />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
