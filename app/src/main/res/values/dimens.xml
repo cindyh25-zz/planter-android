@@ -8,6 +8,7 @@
     <dimen name="grid_3x">12dp</dimen>
     <dimen name="grid_4x">16dp</dimen>
     <dimen name="grid_6x">24dp</dimen>
+    <dimen name="grid_9x">36dp</dimen>
 
     <dimen name="button_compact_padding_vertical">8dp</dimen>
     <dimen name="button_compact_padding_horizontal">10dp</dimen>

@@ -55,7 +55,7 @@
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="MyButtonStyleSmall" parent="android:Widget.Button.Small">
+    <style name="MyButtonStyleSmall" parent="android:Widget.Holo.Button.Borderless.Small">
         <!-- Customizations  -->
         <item name="android:minHeight">0dp</item>
         <item name="android:minWidth">0dp</item>
@@ -63,7 +63,7 @@
         <item name="android:textStyle">normal</item>
     </style>
 
-    <style name="MyButton" parent="android:Widget.Button">
+    <style name="MyButton" parent="android:Widget.Holo.Button.Borderless">
         <!-- Customizations  -->
         <item name="android:textAllCaps">false</item>
         <item name="android:textSize">20sp</item>
