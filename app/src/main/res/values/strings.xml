@@ -42,4 +42,6 @@
         <item>Weeks</item>
         <item>Months</item>
     </string-array>
+
+    <string name="base_url">https://leafy-app-backend.herokuapp.com/</string>
 </resources>

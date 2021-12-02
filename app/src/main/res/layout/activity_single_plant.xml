@@ -22,6 +22,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="@string/water_plant_cta"
+        android:drawableStart="@drawable/ic_rainwhite"
+        android:drawablePadding="@dimen/grid_2x"
+        android:paddingStart="@dimen/grid_4x"
+        android:paddingEnd="@dimen/grid_4x"
         />
 
 

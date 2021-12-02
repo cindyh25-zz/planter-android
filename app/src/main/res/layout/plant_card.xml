@@ -32,6 +32,17 @@
             android:layout_marginLeft="@dimen/grid_3x"
             />
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/waterIcon"
+            android:src="@drawable/ic_rain"
+            app:layout_constraintTop_toTopOf="@id/plantCardLastWatered"
+            app:layout_constraintBottom_toBottomOf="@id/plantCardLastWatered"
+            app:layout_constraintStart_toStartOf="@id/plantCardName"
+            />
+
+
         <TextView
             android:layout_width="@dimen/fill_container"
             android:layout_height="wrap_content"
@@ -39,9 +50,20 @@
             style="@style/Body"
             android:textColor="@color/gray"
             app:layout_constraintTop_toBottomOf="@id/plantCardName"
-            app:layout_constraintStart_toStartOf="@id/plantCardName"
+            app:layout_constraintStart_toEndOf="@id/waterIcon"
+            android:layout_marginStart="@dimen/grid_1x"
             android:layout_marginTop="@dimen/grid_1x"
             android:text="@string/last_watered"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/clockIcon"
+            android:src="@drawable/ic_clock"
+            app:layout_constraintTop_toTopOf="@id/plantCardSchedule"
+            app:layout_constraintBottom_toBottomOf="@id/plantCardSchedule"
+            app:layout_constraintStart_toStartOf="@id/plantCardName"
             />
 
         <TextView
@@ -51,7 +73,8 @@
             style="@style/Body"
             android:textColor="@color/gray"
             app:layout_constraintTop_toBottomOf="@id/plantCardLastWatered"
-            app:layout_constraintStart_toStartOf="@id/plantCardName"
+            app:layout_constraintStart_toEndOf="@id/clockIcon"
+            android:layout_marginStart="@dimen/grid_1x"
             android:layout_marginTop="@dimen/grid_1x"
             android:text="@string/every"
             />
@@ -62,14 +85,17 @@
             android:text="@string/water_cta"
             android:backgroundTint="@color/blue_light"
             android:background="@drawable/button_compact_background"
-            android:paddingVertical="@dimen/button_compact_padding_vertical"
-            android:paddingHorizontal="@dimen/button_compact_padding_horizontal"
+            android:padding="@dimen/button_compact_padding_vertical"
             style="@style/MyButtonStyleSmall"
             android:textColor="@color/blue_regular"
             android:id="@+id/plantCardButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
+            android:drawableLeft="@drawable/ic_rainblue"
+            android:paddingStart="@dimen/button_compact_padding_horizontal"
+            android:drawablePadding="@dimen/grid_2x"
+            android:paddingEnd="@dimen/button_compact_padding_horizontal"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

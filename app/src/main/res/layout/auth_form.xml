@@ -61,6 +61,7 @@
         android:padding="@dimen/grid_3x"
         android:layout_marginTop="@dimen/grid_2x"
         style="@style/F3"
+        android:inputType="textPassword"
         />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
