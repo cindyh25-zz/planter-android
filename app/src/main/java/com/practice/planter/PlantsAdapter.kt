@@ -2,6 +2,7 @@ package com.practice.planter
 
 import android.content.Intent
 import android.text.format.DateUtils
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -86,10 +87,13 @@ class PlantsAdapter(private val plants: List<Plant>) : RecyclerView.Adapter<Plan
 
     }
 
-    fun formatRelativeWateringTime(lastWateredTime : String) : String {
+    fun formatRelativeWateringTime(lastWateredTime : String) : CharSequence {
         val lastWateredDate = SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSSSSS").parse(lastWateredTime).time
         val now = System.currentTimeMillis()
-        val string = DateUtils.getRelativeTimeSpanString(lastWateredDate, now, DateUtils.DAY_IN_MILLIS).toString()
+        val string = DateUtils.getRelativeTimeSpanString(lastWateredDate, now,  DateUtils.DAY_IN_MILLIS, DateUtils.FORMAT_ABBREV_ALL)
+        Log.d("relative time string", string.toString())
+        Log.d("now time", now.toString())
+        Log.d("water time", lastWateredDate.toString())
         return string
     }
 }

@@ -60,7 +60,7 @@ class AddPlantActivity : AppCompatActivity() {
         val bitmap = drawable.toBitmap()
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
         val imageBytes = baos.toByteArray()
-        val imageString = Base64.encodeToString(imageBytes, Base64.DEFAULT)
+        val imageString = "data:image/jpeg;base64,${Base64.encodeToString(imageBytes, Base64.DEFAULT)}"
         return imageString
     }
 
