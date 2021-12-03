@@ -18,6 +18,7 @@
     <string name="last_watered">Last watered</string>
     <string name="schedule">Schedule</string>
     <string name="past_waterings">Past waterings</string>
+    <string name="next_watering">Next watering</string>
     <string name="add_plant">Add a new plant</string>
 
     <string name="plant_name_label">What do you call this plant?</string>
@@ -42,4 +43,6 @@
         <item>Weeks</item>
         <item>Months</item>
     </string-array>
+
+    <string name="base_url">https://leafy-app-backend.herokuapp.com/</string>
 </resources>
