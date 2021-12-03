@@ -118,7 +118,7 @@ class AddPlantActivity : AppCompatActivity() {
 
             val addPlantRequest = Request.Builder().url(BASE_URL + "plants/")
                 .post(
-                    addPlantRequestAdapter.toJson(AddPlantRequest(getImage(), wateringTimeMs, plantName, "plont"))
+                    addPlantRequestAdapter.toJson(AddPlantRequest(getImage(), wateringTimeMs, plantName))
                         .toRequestBody(("application/json; charset=utf-8").toMediaType())
                 )
                 .addHeader("Authorization", "Bearer " + session_token)

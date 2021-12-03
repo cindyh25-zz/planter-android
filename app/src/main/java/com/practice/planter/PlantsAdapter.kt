@@ -1,5 +1,6 @@
 package com.practice.planter
 
+import android.content.Context
 import android.content.Intent
 import android.text.format.DateUtils
 import android.util.Log
@@ -16,11 +17,21 @@ import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.practice.planter.model.Plant
+import com.practice.planter.model.User
+import com.squareup.moshi.Moshi
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import okhttp3.*
+import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.RequestBody.Companion.toRequestBody
+import org.json.JSONObject
+import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
 
 
 class PlantsAdapter(private val plants: List<Plant>) : RecyclerView.Adapter<PlantsAdapter.MyViewHolder>() {
+
+
     class MyViewHolder internal constructor(itemView: View) : RecyclerView.ViewHolder(itemView) {
 //        val image : ImageView = itemView.findViewById(R.id.songImage)
         val image : ImageView = itemView.findViewById(R.id.plantCardImage)
@@ -37,23 +48,35 @@ class PlantsAdapter(private val plants: List<Plant>) : RecyclerView.Adapter<Plan
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val context = holder.itemView.context
+        val sharedPref = context.getSharedPreferences("authPreferences", Context.MODE_PRIVATE)
+        val session_token = sharedPref.getString("session_token", "blah")
         val plant = plants[position]
         holder.plantName.text = plant.name
-        holder.lastWatered.text = "Water ${formatRelativeWateringTime(plant.watering_date)}"
         holder.scheduleText.text = "Every ${convertWateringSchedule(plant.watering_time)}"
+        setText(holder.lastWatered, plant.start_time)
+
         var requestOptions = RequestOptions()
         Glide.with(context)
             .load(plant.image)
             .apply( requestOptions.transform(CenterCrop() ,RoundedCorners(24)) )
             .into(holder.image)
 
+        holder.button.setOnClickListener {
+            Log.d("clicked water", "clicked water")
+            if (session_token != null) {
+                waterPlant(plant.id, session_token, holder.lastWatered, null)
+                setText(holder.lastWatered, plant.start_time)
+            }
+        }
         holder.itemView.setOnClickListener {
             val intent = Intent(context, SinglePlantActivity::class.java)
                 .apply {
                     putExtra("name", plant.name)
                     putExtra("image", plant.image)
-                    putExtra("schedule", plant.watering_time)
-                    putExtra("last_watered", plant.time_elapsed)
+                    putExtra("schedule", "Every ${convertWateringSchedule(plant.watering_time)}")
+                    putExtra("last_watered", "Last watered ${formatRelativeWateringTime(plant.start_time)}")
+                    putExtra("next_watering", "Water next ${formatRelativeWateringTime(plant.watering_date)}")
+                    putExtra("id", plant.id)
                 }
             context.startActivity(intent)
 
@@ -65,35 +88,10 @@ class PlantsAdapter(private val plants: List<Plant>) : RecyclerView.Adapter<Plan
         return plants.size
     }
 
-    fun convertWateringSchedule(wateringTimeMs : Long): String {
-        val months = wateringTimeMs % (DateUtils.DAY_IN_MILLIS * 30)
-        val weeks = wateringTimeMs % (DateUtils.WEEK_IN_MILLIS)
-        val days = wateringTimeMs % (DateUtils.DAY_IN_MILLIS)
-        val hours = wateringTimeMs % (DateUtils.HOUR_IN_MILLIS)
-
-        if (months == 0.toLong()) {
-            val n = (wateringTimeMs / DateUtils.DAY_IN_MILLIS * 30).toString()
-            return "$n months"
-        } else if (weeks == 0.toLong()) {
-            val n = (wateringTimeMs / DateUtils.WEEK_IN_MILLIS).toString()
-            return "$n weeks"
-        } else if (days == 0.toLong()) {
-            val n = (wateringTimeMs / DateUtils.DAY_IN_MILLIS).toString()
-            return "$n days"
-        } else {
-            val n = (wateringTimeMs / DateUtils.HOUR_IN_MILLIS).toString()
-            return "$n hours"
-        }
-
+    fun setText(lastWateredTextView : TextView, date:String) {
+        lastWateredTextView.text = "Last watered ${formatRelativeWateringTime(date)}"
     }
 
-    fun formatRelativeWateringTime(lastWateredTime : String) : CharSequence {
-        val lastWateredDate = SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSSSSS").parse(lastWateredTime).time
-        val now = System.currentTimeMillis()
-        val string = DateUtils.getRelativeTimeSpanString(lastWateredDate, now,  DateUtils.DAY_IN_MILLIS, DateUtils.FORMAT_ABBREV_ALL)
-        Log.d("relative time string", string.toString())
-        Log.d("now time", now.toString())
-        Log.d("water time", lastWateredDate.toString())
-        return string
-    }
+
+
 }

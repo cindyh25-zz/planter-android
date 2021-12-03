@@ -11,9 +11,88 @@
         app:layout_constraintTop_toTopOf="parent"
         />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/schedule"
+        android:id="@+id/scheduleLabel"
+        style="@style/BodyBold"
+        android:textColor="@color/gray"
+        app:layout_constraintTop_toBottomOf="@id/plantImageSection"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/grid_6x"
+        android:layout_marginStart="@dimen/grid_4x"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/schedule"
+        android:id="@+id/scheduleText"
+        style="@style/F3"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/scheduleLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/grid_3x"
+        android:layout_marginStart="@dimen/grid_4x"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/last_watered"
+        android:id="@+id/lastWateredLabel"
+        style="@style/BodyBold"
+        android:textColor="@color/gray"
+        app:layout_constraintTop_toBottomOf="@id/scheduleText"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/grid_6x"
+        android:layout_marginStart="@dimen/grid_4x"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/schedule"
+        android:id="@+id/lastWateredtext"
+        style="@style/F3"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/lastWateredLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/grid_3x"
+        android:layout_marginStart="@dimen/grid_4x"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/next_watering"
+        android:id="@+id/nextWateringLabel"
+        style="@style/BodyBold"
+        android:textColor="@color/gray"
+        app:layout_constraintTop_toBottomOf="@id/lastWateredtext"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/grid_6x"
+        android:layout_marginStart="@dimen/grid_4x"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/schedule"
+        android:id="@+id/nextWateringText"
+        style="@style/F3"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/nextWateringLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/grid_3x"
+        android:layout_marginStart="@dimen/grid_4x"
+        />
+
     <android.widget.Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/waterButton"
         style="@style/MyButton"
         android:background="@drawable/button_blue_background"
         android:textColor="@color/white"

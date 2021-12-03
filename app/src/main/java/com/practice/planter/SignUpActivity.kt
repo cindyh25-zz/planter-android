@@ -74,12 +74,12 @@ class SignUpActivity : AppCompatActivity() {
             session_expiration = null
         }
 
-//        if (session_token?.isNotEmpty() == true && !Date().after(session_expiration)) {
-//            val intent = Intent(applicationContext, MainActivity::class.java).apply {
-//                putExtra("session_token", session_token)
-//            }
-//            startActivity(intent)
-//        }
+        if (session_token?.isNotEmpty() == true && !Date().after(session_expiration)) {
+            val intent = Intent(applicationContext, MainActivity::class.java).apply {
+                putExtra("session_token", session_token)
+            }
+            startActivity(intent)
+        }
 
         switchCta.setOnClickListener {
             setText(!isLoggingIn)

@@ -7,5 +7,4 @@ data class AddPlantRequest (
     val image : String,
     val watering_time : Long,
     val name : String,
-    val plant_tag : String,
 )

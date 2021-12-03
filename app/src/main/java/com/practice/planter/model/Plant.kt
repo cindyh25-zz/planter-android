@@ -9,7 +9,6 @@ data class Plant(
     val user_id : Int,
     val watering_time : Long,
     val name : String,
-    val plant_tag : String,
     val time_elapsed : Float,
     val start_time : String,
     val watering_date : String,

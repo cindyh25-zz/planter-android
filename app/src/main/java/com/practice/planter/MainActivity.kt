@@ -32,7 +32,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var layoutManager : RecyclerView.LayoutManager
     private lateinit var adapter : RecyclerView.Adapter<*>
     private lateinit var addButton : ImageView
-    private lateinit var testText: TextView
 
     private val plants: MutableList<Plant> = mutableListOf()
 //    private val plantList = mutableListOf<Plant>(
@@ -101,10 +100,6 @@ class MainActivity : AppCompatActivity() {
             startActivity(addIntent)
         }
 
-
-
-        testText = findViewById(R.id.testText)
-        testText.text = getSharedPreferences("authPreferences", Context.MODE_PRIVATE).getString("session_token", "blah")
 
     }
 }
