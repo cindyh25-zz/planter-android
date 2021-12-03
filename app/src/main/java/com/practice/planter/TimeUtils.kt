@@ -30,11 +30,9 @@ fun convertWateringSchedule(wateringTimeMs : Long): String {
 // Convert date string to Date, returns relative time span string (in 2 days, 2 days ago)
 fun formatRelativeWateringTime(lastWateredTime : String) : CharSequence {
     val dateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSSSSS")
-//        .parse(lastWateredTime)
     dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"))
     val value = dateFormat.parse(lastWateredTime)
     dateFormat.setTimeZone(TimeZone.getDefault())
-//        .time
     var lastWateredDate = dateFormat.format(value)
     val now = System.currentTimeMillis()
     val string = DateUtils.getRelativeTimeSpanString(dateFormat.parse(lastWateredDate).time, now,  DateUtils.MINUTE_IN_MILLIS, DateUtils.FORMAT_ABBREV_ALL)
